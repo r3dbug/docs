@@ -1,0 +1,51 @@
+cd /
+
+; move asm and exe to subdrawers
+
+; sasc
+; saga_time
+IF EXISTS saga_time_sasc 
+    copy saga_time_sasc bin/
+    delete saga_time_sasc
+ENDIF
+IF EXISTS saga_time_sasc.s 
+    copy saga_time_sasc.s asm/
+    delete saga_time_sasc.s
+ENDIF
+
+; gcc
+; saga_time
+IF EXISTS saga_time_gcc 
+    copy saga_time_gcc bin/
+    delete saga_time_gcc
+ENDIF
+IF EXISTS saga_time_gcc.s 
+    copy saga_time_gcc.s asm/
+    delete saga_time_gcc.s
+ENDIF
+
+; vbcc
+; saga_time
+IF EXISTS saga_time_vbcc 
+    copy saga_time_vbcc bin/
+    delete saga_time_vbcc
+ENDIF
+IF EXISTS saga_time_vbcc.s
+    copy saga_time_vbcc.s asm/
+    delete saga_time_vbcc.s
+ENDIF
+
+; gcc6
+; saga_time
+IF EXISTS saga_time_gcc6 
+    copy saga_time_gcc6 bin/
+    delete saga_time_gcc6
+ENDIF
+IF EXISTS saga_time_gcc6.s 
+    copy saga_time_gcc6.s asm/
+    delete saga_time_gcc6.s
+ENDIF
+
+; copy also handwritten asm files
+copy saga_asm.s asm/
+

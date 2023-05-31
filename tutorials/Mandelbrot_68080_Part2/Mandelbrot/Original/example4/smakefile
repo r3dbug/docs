@@ -1,0 +1,42 @@
+
+all:
+	smake par0
+	smake par1
+	smake par2
+
+allclean:
+	smake cleanexe
+	smake all
+	smake clean
+		
+par0:
+	vasm -m68080 -Fhunk fractal_asm0.s -o fractal_asm0.o
+	sc link cpu=68040 math=68881 parmandel0.c fractal_asm0.o
+
+par1:
+	vasm -m68080 -Fhunk fractal_asm1.s -o fractal_asm1.o
+	sc link cpu=68040 math=68881 parmandel1.c fractal_asm1.o
+
+par2:
+	vasm -m68080 -Fhunk fractal_asm2.s -o fractal_asm2.o
+	sc link cpu=68040 math=68881 parmandel2.c fractal_asm2.o
+
+clean:
+	delete parmandel0.o
+	delete parmandel0.lnk
+	delete parmandel0.info
+	delete fractal_asm0.o
+	delete parmandel1.o
+	delete parmandel1.lnk
+	delete parmandel1.info
+	delete fractal_asm1.o
+	delete parmandel2.o
+	delete parmandel2.lnk
+	delete parmandel2.info
+	delete fractal_asm2.o
+	
+cleanexe:
+	delete parmandel0
+	delete parmandel1
+	delete parmandel2
+	

@@ -1,0 +1,6 @@
+FROM LIB:c.o "boundary_trace2.o"+"fractal_asm2.o"
+TO "boundary_trace2"
+LIB LIB:scm881.lib
+    LIB:sc.lib LIB:amiga.lib
+STRIPDEBUG
+

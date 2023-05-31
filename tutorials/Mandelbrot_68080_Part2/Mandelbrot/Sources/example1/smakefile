@@ -1,0 +1,51 @@
+
+all:
+	smake saga_main0
+	smake saga_main1
+
+allclean:
+	smake cleanexe
+	smake all
+	smake clean
+
+alloptstrip:
+	smake sm0optstrip
+	smake sm1optstrip
+			
+sm1optstrip:
+	vasm -m68080 -Fhunk saga_asm1.s -o saga_asm1.o
+	sc link optimize opttime optalias optinline stripdebug saga_main1.c disassemble=saga_main1_sasc.s saga_asm1.o
+	copy saga_main1 saga_main1_sasc
+	delete saga_main1
+	
+sm0optstrip:
+	vasm -m68080 -Fhunk saga_asm0.s -o saga_asm0.o
+	sc link optimize opttime optalias optinline stripdebug saga_main0.c disassemble=saga_main0_sasc.s saga_asm0.o
+	copy saga_main0 saga_main0_sasc
+	delete saga_main0
+	
+saga_main1:
+	vasm -m68080 -Fhunk saga_asm1.s -o saga_asm1.o
+	sc link saga_main1.c disassemble=saga_main1_sasc.s saga_asm1.o
+	copy saga_main1 saga_main1_sasc
+	delete saga_main1
+	
+saga_main0:
+	vasm -m68080 -Fhunk saga_asm0.s -o saga_asm0.o
+	sc link saga_main0.c disassemble=saga_main0_sasc.s saga_asm0.o
+	copy saga_main0 saga_main0_sasc
+	delete saga_main0
+	
+clean:
+	delete saga_main0.o
+	delete saga_main0.lnk
+	delete saga_main0.info
+	delete saga_asm0.o
+	delete saga_main1.o
+	delete saga_main1.lnk
+	delete saga_main1.info
+	delete saga_asm1.o
+	
+cleanexe:
+	delete saga_main0
+	delete saga_main1

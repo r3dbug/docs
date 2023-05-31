@@ -1,0 +1,21 @@
+echo "Move executables and assembly code of all examples ..."
+
+cd /Sources/example0/scripts
+execute move_all
+
+cd /example1/scripts
+execute move_all
+
+cd /example2/scripts
+execute move_all
+
+cd /example3/scripts
+execute move_all
+
+cd /example4/scripts
+execute move_all
+
+cd /example5/scripts
+execute move_all
+
+cd //Scripts

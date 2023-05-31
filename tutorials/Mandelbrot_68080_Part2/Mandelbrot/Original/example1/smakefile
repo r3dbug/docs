@@ -1,0 +1,31 @@
+
+all:
+	smake saga_main0
+	smake saga_main1
+
+allclean:
+	smake cleanexe
+	smake all
+	smake clean
+		
+saga_main1:
+	vasm -m68080 -Fhunk saga_asm1.s -o saga_asm1.o
+	sc link saga_main1.c saga_asm1.o
+
+saga_main0:
+	vasm -m68080 -Fhunk saga_asm0.s -o saga_asm0.o
+	sc link saga_main0.c saga_asm0.o
+
+clean:
+	delete saga_main0.o
+	delete saga_main0.lnk
+	delete saga_main0.info
+	delete saga_asm0.o
+	delete saga_main1.o
+	delete saga_main1.lnk
+	delete saga_main1.info
+	delete saga_asm1.o
+	
+cleanexe:
+	delete saga_main0
+	delete saga_main1

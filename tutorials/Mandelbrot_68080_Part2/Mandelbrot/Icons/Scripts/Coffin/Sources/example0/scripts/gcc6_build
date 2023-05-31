@@ -1,0 +1,23 @@
+cd ..
+
+gccflags0="-noixemul -m68040 -m68881 -S -fomit-frame-pointer -O3 -Os"
+gccflags1="-noixemul -m68040 -m68881 -s -noixemul"
+
+echo "Compiling with GCC ..."
+echo "Options:"
+echo "Flags0: $gccflags0"
+echo "Flags1: $gccflags1"
+
+# simple_saga0
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags0 simple_saga0.c -o simple_saga0_gcc6.s
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags1 simple_saga0_gcc6.s -o simple_saga0_gcc6
+
+# simple_saga1
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags0 simple_saga1.c -o simple_saga1_gcc6.s
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags1 simple_saga1_gcc6.s -o simple_saga1_gcc6
+
+# clean
+rm simple_saga0.lnk
+rm simple_saga0.o
+rm simple_saga1.lnk
+rm simple_saga1.o

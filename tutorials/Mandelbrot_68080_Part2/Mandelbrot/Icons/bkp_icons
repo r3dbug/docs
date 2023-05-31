@@ -1,0 +1,131 @@
+; copy all icons to bkp drawer
+
+set dest "ram:bkp"
+delete "$dest" ALL
+
+makedir ram:bkp
+
+; Mandelbrot (main drawer)
+makedir "$dest/Mandelbrot"
+copy //Mandelbrot.info "$dest/"
+
+; root directory drawers
+makedir "$dest/Mandelbrot/Configure"
+makedir "$dest/Mandelbrot/Icons"
+makedir "$dest/Mandelbrot/Original"
+makedir "$dest/Mandelbrot/Scripts"
+makedir "$dest/Mandelbrot/Sources"
+copy /#?.info "$dest/Mandelbrot/"
+
+; sources drawer icons
+copy /sources/#?.info "$dest/Mandelbrot/Sources/"
+
+; example0
+makedir "$dest/Mandelbrot/Sources/example0"
+copy /sources/example0/#?.info "$dest/Mandelbrot/Sources/example0/"
+
+; example0/asm
+makedir "$dest/Mandelbrot/Sources/example0/asm"
+copy /sources/example0/asm/#?.info "$dest/Mandelbrot/Sources/example0/asm"
+
+; example0/bin
+makedir "$dest/Mandelbrot/Sources/example0/bin"
+copy /sources/example0/bin/#?.info "$dest/Mandelbrot/Sources/example0/bin"
+
+makedir "$dest/Mandelbrot/Sources/example0/scripts"
+copy /sources/example0/scripts/#?.info "$dest/Mandelbrot/Sources/example0/scripts"
+
+
+
+; example1
+makedir "$dest/Mandelbrot/Sources/example1"
+copy /sources/example1/#?.info "$dest/Mandelbrot/Sources/example1/"
+
+; example0/asm
+makedir "$dest/Mandelbrot/Sources/example1/asm"
+copy /sources/example1/asm/#?.info "$dest/Mandelbrot/Sources/example1/asm"
+
+; example0/bin
+makedir "$dest/Mandelbrot/Sources/example1/bin"
+copy /sources/example1/bin/#?.info "$dest/Mandelbrot/Sources/example1/bin"
+
+makedir "$dest/Mandelbrot/Sources/example1/scripts"
+copy /sources/example1/scripts/#?.info "$dest/Mandelbrot/Sources/example1/scripts"
+
+
+
+
+
+; example2
+makedir "$dest/Mandelbrot/Sources/example2"
+copy /sources/example2/#?.info "$dest/Mandelbrot/Sources/example2/"
+
+; example2/asm
+makedir "$dest/Mandelbrot/Sources/example2/asm"
+copy /sources/example2/asm/#?.info "$dest/Mandelbrot/Sources/example2/asm"
+
+; example2/bin
+makedir "$dest/Mandelbrot/Sources/example2/bin"
+copy /sources/example2/bin/#?.info "$dest/Mandelbrot/Sources/example2/bin"
+
+makedir "$dest/Mandelbrot/Sources/example2/scripts"
+copy /sources/example2/scripts/#?.info "$dest/Mandelbrot/Sources/example2/scripts"
+
+
+; example3
+makedir "$dest/Mandelbrot/Sources/example3"
+copy /sources/example3/#?.info "$dest/Mandelbrot/Sources/example3/"
+
+; example3/asm
+makedir "$dest/Mandelbrot/Sources/example3/asm"
+copy /sources/example3/asm/#?.info "$dest/Mandelbrot/Sources/example3/asm"
+
+; example3/bin
+makedir "$dest/Mandelbrot/Sources/example3/bin"
+copy /sources/example3/bin/#?.info "$dest/Mandelbrot/Sources/example3/bin"
+
+makedir "$dest/Mandelbrot/Sources/example3/scripts"
+copy /sources/example3/scripts/#?.info "$dest/Mandelbrot/Sources/example3/scripts"
+
+
+
+
+; example4
+makedir "$dest/Mandelbrot/Sources/example4"
+copy /sources/example4/#?.info "$dest/Mandelbrot/Sources/example4/"
+
+; example4/asm
+makedir "$dest/Mandelbrot/Sources/example4/asm"
+copy /sources/example4/asm/#?.info "$dest/Mandelbrot/Sources/example4/asm"
+
+; example4/bin
+makedir "$dest/Mandelbrot/Sources/example4/bin"
+copy /sources/example4/bin/#?.info "$dest/Mandelbrot/Sources/example4/bin"
+
+makedir "$dest/Mandelbrot/Sources/example4/scripts"
+copy /sources/example4/scripts/#?.info "$dest/Mandelbrot/Sources/example4/scripts"
+
+
+
+
+; example5
+makedir "$dest/Mandelbrot/Sources/example5"
+copy /sources/example5/#?.info "$dest/Mandelbrot/Sources/example5/"
+
+; example5/asm
+makedir "$dest/Mandelbrot/Sources/example5/asm"
+copy /sources/example5/asm/#?.info "$dest/Mandelbrot/Sources/example5/asm"
+
+; example5/bin
+makedir "$dest/Mandelbrot/Sources/example5/bin"
+copy /sources/example5/bin/#?.info "$dest/Mandelbrot/Sources/example5/bin"
+
+makedir "$dest/Mandelbrot/Sources/example5/scripts"
+copy /sources/example5/scripts/#?.info "$dest/Mandelbrot/Sources/example5/scripts"
+
+
+
+
+; teaser
+makedir "$dest/Mandelbrot/Sources/teaser"
+copy /sources/teaser/#?.info "$dest/Mandelbrot/Sources/teaser/"

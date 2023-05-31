@@ -1,0 +1,23 @@
+
+all:
+	smake saga_time
+
+allclean:
+	smake cleanexe
+	smake all
+	smake clean
+	
+saga_time:
+	vasm -m68080 -Fhunk saga_asm.s -o saga_asm.o
+	sc link cpu=68040 math=68881 saga_time.c saga_asm.o
+
+clean:
+	delete saga_time.o
+	delete saga_time.lnk
+	delete saga_time.info
+	delete saga_asm.o
+	
+cleanexe:
+	delete saga_time
+
+

@@ -1,0 +1,125 @@
+cd /
+
+; move asm and exe to subdrawers
+
+; sasc
+; boundary_trace0
+IF EXISTS boundary_trace0_sasc 
+    copy boundary_trace0_sasc bin/
+    delete boundary_trace0_sasc
+ENDIF
+IF EXISTS boundary_trace0_sasc.s 
+    copy boundary_trace0_sasc.s asm/
+    delete boundary_trace0_sasc.s
+ENDIF
+; boundary_trace1
+IF EXISTS boundary_trace1_sasc 
+    copy boundary_trace1_sasc bin/
+    delete boundary_trace1_sasc
+ENDIF
+IF EXISTS boundary_trace1_sasc.s
+    copy boundary_trace1_sasc.s asm/
+    delete boundary_trace1_sasc.s
+ENDIF
+; boundary_trace2
+IF EXISTS boundary_trace2_sasc 
+    copy boundary_trace2_sasc bin/
+    delete boundary_trace2_sasc
+ENDIF
+IF EXISTS boundary_trace2_sasc.s 
+    copy boundary_trace2_sasc.s asm/
+    delete boundary_trace2_sasc.s
+ENDIF
+
+; gcc
+; boundary_trace0
+IF EXISTS boundary_trace0_gcc 
+    copy boundary_trace0_gcc bin/
+    delete boundary_trace0_gcc
+ENDIF
+IF EXISTS boundary_trace0_gcc.s 
+    copy boundary_trace0_gcc.s asm/
+    delete boundary_trace0_gcc.s
+ENDIF
+; boundary_trace1
+IF EXISTS boundary_trace1_gcc 
+    copy boundary_trace1_gcc bin/
+    delete boundary_trace1_gcc
+ENDIF
+IF EXISTS boundary_trace1_gcc.s 
+    copy boundary_trace1_gcc.s asm/
+    delete boundary_trace1_gcc.s
+ENDIF
+; boundary_trace2
+IF EXISTS boundary_trace2_gcc 
+    copy boundary_trace2_gcc bin/
+    delete boundary_trace2_gcc
+ENDIF
+IF EXISTS boundary_trace2_gcc.s 
+    copy boundary_trace2_gcc.s asm/
+    delete boundary_trace2_gcc.s
+ENDIF
+
+; vbcc
+; boundary_trace0
+IF EXISTS boundary_trace0_vbcc 
+    copy boundary_trace0_vbcc bin/
+    delete boundary_trace0_vbcc
+ENDIF
+IF EXISTS boundary_trace0_vbcc.s
+    copy boundary_trace0_vbcc.s asm/
+    delete boundary_trace0_vbcc.s
+ENDIF
+; boundary_trace1
+IF EXISTS boundary_trace1_vbcc 
+    copy boundary_trace1_vbcc bin/
+    delete boundary_trace1_vbcc
+ENDIF
+IF EXISTS boundary_trace1_vbcc.s 
+    copy boundary_trace1_vbcc.s asm/
+    delete boundary_trace1_vbcc.s
+ENDIF
+; boundary_trace2
+IF EXISTS boundary_trace2_vbcc 
+    copy boundary_trace2_vbcc bin/
+    delete boundary_trace2_vbcc
+ENDIF
+IF EXISTS boundary_trace2_vbcc.s
+    copy boundary_trace2_vbcc.s asm/
+    delete boundary_trace2_vbcc.s
+ENDIF
+
+; gcc
+; boundary_trace0
+IF EXISTS boundary_trace0_gcc6 
+    copy boundary_trace0_gcc6 bin/
+    delete boundary_trace0_gcc6
+ENDIF
+IF EXISTS boundary_trace0_gcc6.s 
+    copy boundary_trace0_gcc6.s asm/
+    delete boundary_trace0_gcc6.s
+ENDIF
+; boundary_trace1
+IF EXISTS boundary_trace1_gcc6 
+    copy boundary_trace1_gcc6 bin/
+    delete boundary_trace1_gcc6
+ENDIF
+IF EXISTS boundary_trace1_gcc6.s 
+    copy boundary_trace1_gcc6.s asm/
+    delete boundary_trace1_gcc6.s
+ENDIF
+; boundary_trace2
+IF EXISTS boundary_trace2_gcc6 
+    copy boundary_trace2_gcc6 bin/
+    delete boundary_trace2_gcc6
+ENDIF
+IF EXISTS boundary_trace2_gcc6.s 
+    copy boundary_trace2_gcc6.s asm/
+    delete boundary_trace2_gcc6.s
+ENDIF
+
+; copy also handwritten asm files
+copy fractal_asm0.s asm/
+copy fractal_asm1.s asm/
+copy fractal_asm2.s asm/
+

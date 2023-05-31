@@ -1,0 +1,13 @@
+cd /
+
+echo "Compiling with VBCC ..." 
+
+; simple_saga0
+vc -S -fpu=68881 -O4 -speed simple_saga0.c -o simple_saga0_vbcc.s
+vc simple_saga0_vbcc.s -o simple_saga0_vbcc
+
+; simple_saga1
+vc -S -fpu=68881 -O4 -speed  simple_saga1.c -o simple_saga1_vbcc.s
+vc simple_saga1_vbcc.s -o simple_saga1_vbcc
+
+echo "End of compile script."

@@ -1,0 +1,1 @@
+gcc -m68040 -m68881 saga_time_gcc_opt1.s saga_asm.o -o saga_time_gcc_opt1

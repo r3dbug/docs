@@ -1,0 +1,42 @@
+; copy all scripts to bkp_scripts drawer
+
+set dest "ram:scripts"
+delete "$dest" ALL
+
+makedir "$dest"
+
+; sources drawer
+makedir "$dest/Sources"
+
+; start compiler script
+copy /Sources/start_compilers "$dest/Sources/"
+
+; example0
+makedir "$dest/Sources/example0"
+makedir "$dest/Sources/example0/scripts"
+copy "/Sources/example0/scripts/#?" "$dest/Sources/example0/scripts/"
+
+; example1
+makedir "$dest/Sources/example1"
+makedir "$dest/Sources/example1/scripts"
+copy "/Sources/example1/scripts/#?" "$dest/Sources/example1/scripts/"
+
+; example2
+makedir "$dest/Sources/example2"
+makedir "$dest/Sources/example2/scripts"
+copy "/Sources/example2/scripts/#?" "$dest/Sources/example2/scripts/"
+
+; example3
+makedir "$dest/Sources/example3"
+makedir "$dest/Sources/example3/scripts"
+copy "/Sources/example3/scripts/#?" "$dest/Sources/example3/scripts/"
+
+; example4
+makedir "$dest/Sources/example4"
+makedir "$dest/Sources/example4/scripts"
+copy "/Sources/example4/scripts/#?" "$dest/Sources/example4/scripts/"
+
+; example5
+makedir "$dest/Sources/example5"
+makedir "$dest/Sources/example5/scripts"
+copy "/Sources/example5/scripts/#?" "$dest/Sources/example5/scripts/"

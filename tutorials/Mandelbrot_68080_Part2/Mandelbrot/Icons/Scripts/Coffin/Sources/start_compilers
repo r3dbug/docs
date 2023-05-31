@@ -1,0 +1,27 @@
+
+; start GCC (GNU C) and VBCC
+; GCC
+ASSIGN >NIL: GNU: EXISTS
+IF WARN
+   cd Programs:Programming/ADE/ 
+   run execute ADE-Startup
+ELSE
+   echo "GNU C is up and running"
+ENDIF
+
+; VBCC 
+; (In ApolloOS R9.x already started via user-startup)
+ASSIGN >NIL: vbcc: EXISTS
+IF WARN
+   run execute "Programs:Programming/VBCC/Start VBCC"
+ELSE
+   echo "VBCC is up and running"
+ENDIF
+
+; show stack size
+stack
+echo
+echo "NOTE:"
+echo "It is highly recommended to raise stack size for these compilers."
+echo "You can do this  either manually (typing ´stack size´ in the shell)"
+echo "or automatically by adding the command to s:shell-startup."

@@ -1,0 +1,88 @@
+cd /
+
+; move asm and exe to subdrawers
+
+; sasc
+; saga_main0
+IF EXISTS saga_main0_sasc 
+    copy saga_main0_sasc bin/
+    delete saga_main0_sasc
+ENDIF
+IF EXISTS saga_main0_sasc.s 
+    copy saga_main0_sasc.s asm/
+    delete saga_main0_sasc.s
+ENDIF
+; saga_main1
+IF EXISTS saga_main1_sasc 
+    copy saga_main1_sasc bin/
+    delete saga_main1_sasc
+ENDIF
+IF EXISTS saga_main1_sasc.s
+    copy saga_main1_sasc.s asm/
+    delete saga_main1_sasc.s
+ENDIF
+
+; gcc
+; saga_main0
+IF EXISTS saga_main0_gcc 
+    copy saga_main0_gcc bin/
+    delete saga_main0_gcc
+ENDIF
+IF EXISTS saga_main0_gcc.s 
+    copy saga_main0_gcc.s asm/
+    delete saga_main0_gcc.s
+ENDIF
+;simple saga1
+IF EXISTS saga_main1_gcc 
+    copy saga_main1_gcc bin/
+    delete saga_main1_gcc
+ENDIF
+IF EXISTS saga_main1_gcc.s 
+    copy saga_main1_gcc.s asm/
+    delete saga_main1_gcc.s
+ENDIF
+
+; vbcc
+; saga_main0
+IF EXISTS saga_main0_vbcc 
+    copy saga_main0_vbcc bin/
+    delete saga_main0_vbcc
+ENDIF
+IF EXISTS saga_main0_vbcc.s
+    copy saga_main0_vbcc.s asm/
+    delete saga_main0_vbcc.s
+ENDIF
+
+; saga_main1
+IF EXISTS saga_main1_vbcc 
+    copy saga_main1_vbcc bin/
+    delete saga_main1_vbcc
+ENDIF
+IF EXISTS saga_main1_vbcc.s 
+    copy saga_main1_vbcc.s asm/
+    delete saga_main1_vbcc.s
+ENDIF
+
+; gcc6
+; saga_main0
+IF EXISTS saga_main0_gcc6 
+    copy saga_main0_gcc6 bin/
+    delete saga_main0_gcc6
+ENDIF
+IF EXISTS saga_main0_gcc6.s 
+    copy saga_main0_gcc6.s asm/
+    delete saga_main0_gcc6.s
+ENDIF
+;simple saga1
+IF EXISTS saga_main1_gcc6 
+    copy saga_main1_gcc6 bin/
+    delete saga_main1_gcc6
+ENDIF
+IF EXISTS saga_main1_gcc6.s 
+    copy saga_main1_gcc6.s asm/
+    delete saga_main1_gcc6.s
+ENDIF
+
+; copy also handwritten asm files
+copy saga_asm0.s asm/
+copy saga_asm1.s asm/

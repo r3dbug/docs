@@ -1,0 +1,38 @@
+cd /
+
+set vbccflags0 "-S -fpu=68881 -O2"
+set vbccflags1 "-c"
+set vbccflags2 ""
+
+echo "Compiling with VBCC ..."
+echo "Options:"
+echo "Flags0: $vbccflags0"
+echo "Flags1: $vbccflags1"
+echo "Flags2: $vbccflags2"
+
+; parmandel0
+vbcc:bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk fractal_asm0.s -o fractal_asm0.o
+vc $vbccflags0 parmandel0.c -o parmandel0_vbcc.s
+vc $vbccflags1 parmandel0_vbcc.s -o parmandel0.o
+vc $vbccflags2 parmandel0.o fractal_asm0.o -o parmandel0_vbcc
+
+; parmandel1
+vbcc:bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk fractal_asm1.s -o fractal_asm1.o
+vc $vbccflags0 parmandel1.c -o parmandel1_vbcc.s
+vc $vbccflags1 parmandel1_vbcc.s -o parmandel1.o
+vc $vbccflags2 parmandel1.o fractal_asm1.o -o parmandel1_vbcc
+
+; parmandel2
+vbcc:bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk fractal_asm2.s -o fractal_asm2.o
+vc $vbccflags0 parmandel2.c -o parmandel2_vbcc.s
+vc $vbccflags1 parmandel2_vbcc.s -o parmandel2.o
+vc $vbccflags2 parmandel2.o fractal_asm2.o -o parmandel2_vbcc
+
+; clean
+delete parmandel0.o
+delete parmandel1.o
+delete parmandel2.o
+
+echo "End of compile script."
+
+

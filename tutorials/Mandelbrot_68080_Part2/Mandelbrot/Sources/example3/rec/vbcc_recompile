@@ -1,0 +1,6 @@
+;vasm -m68080 -m68881 -Fhunk fractal_asm0.s -o fractal_asm0.o
+vc -m68080 brute_force0_vbcc_opt1.s fractal_asm0.o -o brute_force0_vbcc_opt1
+;vc -m68080 brute_force0_vbcc_opt2.s fractal_asm0.o -o brute_force0_vbcc_opt2
+;vc -m68080 brute_force0_vbcc_opt3.s fractal_asm0.o -o brute_force0_vbcc_opt3
+
+

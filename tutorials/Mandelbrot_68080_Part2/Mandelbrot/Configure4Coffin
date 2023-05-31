@@ -1,0 +1,7 @@
+cd Icons
+execute set_coffin_scripts
+execute set_coffin_icons
+
+; if you want to save disk space you can delete the icons drawer afterwards
+; cd /
+; delete Icons

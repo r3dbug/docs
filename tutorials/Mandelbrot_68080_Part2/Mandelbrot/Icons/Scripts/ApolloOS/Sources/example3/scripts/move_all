@@ -1,0 +1,161 @@
+cd /
+
+; move asm and exe to subdrawers
+
+; sasc
+; brute_force0
+IF EXISTS brute_force0_sasc 
+    copy brute_force0_sasc bin/
+    delete brute_force0_sasc
+ENDIF
+IF EXISTS brute_force0_sasc.s 
+    copy brute_force0_sasc.s asm/
+    delete brute_force0_sasc.s
+ENDIF
+; brute_force1
+IF EXISTS brute_force1_sasc 
+    copy brute_force1_sasc bin/
+    delete brute_force1_sasc
+ENDIF
+IF EXISTS brute_force1_sasc.s
+    copy brute_force1_sasc.s asm/
+    delete brute_force1_sasc.s
+ENDIF
+; brute_force2
+IF EXISTS brute_force2_sasc 
+    copy brute_force2_sasc bin/
+    delete brute_force2_sasc
+ENDIF
+IF EXISTS brute_force2_sasc.s 
+    copy brute_force2_sasc.s asm/
+    delete brute_force2_sasc.s
+ENDIF
+; brute_force1
+IF EXISTS brute_force3_sasc 
+    copy brute_force3_sasc bin/
+    delete brute_force3_sasc
+ENDIF
+IF EXISTS brute_force3_sasc.s
+    copy brute_force3_sasc.s asm/
+    delete brute_force3_sasc.s
+ENDIF
+
+; gcc
+; brute_force0
+IF EXISTS brute_force0_gcc 
+    copy brute_force0_gcc bin/
+    delete brute_force0_gcc
+ENDIF
+IF EXISTS brute_force0_gcc.s 
+    copy brute_force0_gcc.s asm/
+    delete brute_force0_gcc.s
+ENDIF
+;simple saga1
+IF EXISTS brute_force1_gcc 
+    copy brute_force1_gcc bin/
+    delete brute_force1_gcc
+ENDIF
+IF EXISTS brute_force1_gcc.s 
+    copy brute_force1_gcc.s asm/
+    delete brute_force1_gcc.s
+ENDIF
+; brute_force2
+IF EXISTS brute_force2_gcc 
+    copy brute_force2_gcc bin/
+    delete brute_force2_gcc
+ENDIF
+IF EXISTS brute_force2_gcc.s 
+    copy brute_force2_gcc.s asm/
+    delete brute_force2_gcc.s
+ENDIF
+;simple saga1
+IF EXISTS brute_force3_gcc 
+    copy brute_force3_gcc bin/
+    delete brute_force3_gcc
+ENDIF
+IF EXISTS brute_force3_gcc.s 
+    copy brute_force3_gcc.s asm/
+    delete brute_force3_gcc.s
+ENDIF
+
+; vbcc
+; brute_force0
+IF EXISTS brute_force0_vbcc 
+    copy brute_force0_vbcc bin/
+    delete brute_force0_vbcc
+ENDIF
+IF EXISTS brute_force0_vbcc.s
+    copy brute_force0_vbcc.s asm/
+    delete brute_force0_vbcc.s
+ENDIF
+; brute_force1
+IF EXISTS brute_force1_vbcc 
+    copy brute_force1_vbcc bin/
+    delete brute_force1_vbcc
+ENDIF
+IF EXISTS brute_force1_vbcc.s 
+    copy brute_force1_vbcc.s asm/
+    delete brute_force1_vbcc.s
+ENDIF
+; brute_force0
+IF EXISTS brute_force2_vbcc 
+    copy brute_force2_vbcc bin/
+    delete brute_force2_vbcc
+ENDIF
+IF EXISTS brute_force2_vbcc.s
+    copy brute_force2_vbcc.s asm/
+    delete brute_force2_vbcc.s
+ENDIF
+; brute_force1
+IF EXISTS brute_force3_vbcc 
+    copy brute_force3_vbcc bin/
+    delete brute_force3_vbcc
+ENDIF
+IF EXISTS brute_force3_vbcc.s 
+    copy brute_force3_vbcc.s asm/
+    delete brute_force3_vbcc.s
+ENDIF
+
+; gcc6
+; brute_force0
+IF EXISTS brute_force0_gcc6 
+    copy brute_force0_gcc6 bin/
+    delete brute_force0_gcc6
+ENDIF
+IF EXISTS brute_force0_gcc6.s 
+    copy brute_force0_gcc6.s asm/
+    delete brute_force0_gcc6.s
+ENDIF
+;simple saga1
+IF EXISTS brute_force1_gcc6 
+    copy brute_force1_gcc6 bin/
+    delete brute_force1_gcc6
+ENDIF
+IF EXISTS brute_force1_gcc6.s 
+    copy brute_force1_gcc6.s asm/
+    delete brute_force1_gcc6.s
+ENDIF
+; brute_force2
+IF EXISTS brute_force2_gcc6 
+    copy brute_force2_gcc6 bin/
+    delete brute_force2_gcc6
+ENDIF
+IF EXISTS brute_force2_gcc6.s 
+    copy brute_force2_gcc6.s asm/
+    delete brute_force2_gcc6.s
+ENDIF
+;simple saga1
+IF EXISTS brute_force3_gcc6 
+    copy brute_force3_gcc6 bin/
+    delete brute_force3_gcc6
+ENDIF
+IF EXISTS brute_force3_gcc6.s 
+    copy brute_force3_gcc6.s asm/
+    delete brute_force3_gcc6.s
+ENDIF
+
+; copy also handwritten asm files
+copy fractal_asm0.s asm/
+copy fractal_asm1.s asm/
+copy fractal_asm2.s asm/
+copy fractal_asm3.s asm/

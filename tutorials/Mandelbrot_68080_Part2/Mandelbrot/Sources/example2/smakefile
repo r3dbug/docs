@@ -1,0 +1,34 @@
+
+all:
+	smake saga_time
+
+allclean:
+	smake cleanexe
+	smake all
+	smake clean
+
+alloptstrip:
+	smake stoptstrip
+	
+stoptstrip:
+	vasm -m68080 -Fhunk saga_asm.s -o saga_asm.o
+	sc link optimize opttime optalias optinline stripdebug cpu=68040 math=68881 disassemble=saga_time_sasc.s saga_time.c saga_asm.o
+	copy saga_time saga_time_sasc
+	delete saga_time
+	
+saga_time:
+	vasm -m68080 -Fhunk saga_asm.s -o saga_asm.o
+	sc link cpu=68040 math=68881 disassemble=saga_time_sasc.s saga_time.c saga_asm.o
+	copy saga_time saga_time_sasc
+	delete saga_time
+
+clean:
+	delete saga_time.o
+	delete saga_time.lnk
+	delete saga_time.info
+	delete saga_asm.o
+	
+cleanexe:
+	delete saga_time
+
+

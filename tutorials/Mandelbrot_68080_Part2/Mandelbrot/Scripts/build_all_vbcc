@@ -1,0 +1,25 @@
+echo "Compile example0 ..."
+cd /Sources/example0/scripts/
+execute vbcc_build
+
+echo "Compile example1 ..."
+cd /example1/scripts
+execute vbcc_build
+
+echo "Compile example2 ..."
+cd /example2/scripts
+execute vbcc_build
+
+echo "Compile example3 ..."
+cd /example3/scripts
+execute vbcc_build
+
+echo "Compile example4 ..."
+cd /example4/scripts
+execute vbcc_build
+
+echo "Compile example5 ..."
+cd /example5/scripts
+execute vbcc_build
+
+cd //Scripts

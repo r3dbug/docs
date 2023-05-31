@@ -1,0 +1,3 @@
+; copies ApolloOS icons
+
+copy Scripts/Coffin/#? /  ALL

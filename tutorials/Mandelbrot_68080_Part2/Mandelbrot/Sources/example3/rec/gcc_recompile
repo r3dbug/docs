@@ -1,0 +1,5 @@
+;gcc -m68040 -m68881 brute_force0_gcc_opt1.s fractal_asm0.o -o brute_force0_gcc_opt1
+;gcc -m68040 -m68881 brute_force0_gcc_opt2.s fractal_asm0.o -o brute_force0_gcc_opt2
+;gcc -m68040 -m68881 brute_force0_gcc_opt3.s fractal_asm0.o -o brute_force0_gcc_opt3
+gcc -m68040 -m68881 brute_force0_gcc_opt4.s fractal_asm0.o -o brute_force0_gcc_opt4
+

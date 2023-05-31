@@ -1,0 +1,44 @@
+cd /
+
+set vbccflags0 "-S -fpu=68881 -O4 -speed"
+set vbccflags1 "-c"
+set vbccflags2 ""
+
+echo "Compiling with VBCC ..."
+echo "Options:"
+echo "Flags0: $vbccflags0"
+echo "Flags1: $vbccflags1"
+echo "Flags2: $vbccflags2"
+
+; brute_force0
+vbcc:bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk fractal_asm0.s -o fractal_asm0.o
+vc $vbccflags0 brute_force0.c -o brute_force0_vbcc.s
+vc $vbccflags1 brute_force0_vbcc.s -o brute_force0.o
+vc $vbccflags2 brute_force0.o fractal_asm0.o -o brute_force0_vbcc
+
+; brute_force1
+vbcc:bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk fractal_asm1.s -o fractal_asm1.o
+vc $vbccflags0 brute_force1.c -o brute_force1_vbcc.s
+vc $vbccflags1 brute_force1_vbcc.s -o brute_force1.o
+vc $vbccflags2 brute_force1.o fractal_asm1.o -o brute_force1_vbcc
+
+; brute_force2
+vbcc:bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk fractal_asm2.s -o fractal_asm2.o
+vc $vbccflags0 brute_force2.c -o brute_force2_vbcc.s
+vc $vbccflags1 brute_force2_vbcc.s -o brute_force2.o
+vc $vbccflags2 brute_force2.o fractal_asm2.o -o brute_force2_vbcc
+
+; brute_force3
+vbcc:bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk fractal_asm3.s -o fractal_asm3.o
+vc $vbccflags0 brute_force3.c -o brute_force3_vbcc.s
+vc $vbccflags1 brute_force3_vbcc.s -o brute_force3.o
+vc $vbccflags2 brute_force3.o fractal_asm3.o -o brute_force3_vbcc
+
+; clean
+delete brute_force0.o
+delete brute_force1.o
+delete brute_force2.o
+delete brute_force3.o
+
+echo "End of compile script."
+

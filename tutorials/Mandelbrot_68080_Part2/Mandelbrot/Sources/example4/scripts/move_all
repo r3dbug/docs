@@ -1,0 +1,125 @@
+cd /
+
+; move asm and exe to subdrawers
+
+; sasc
+; parmandel0
+IF EXISTS parmandel0_sasc 
+    copy parmandel0_sasc bin/
+    delete parmandel0_sasc
+ENDIF
+IF EXISTS parmandel0_sasc.s 
+    copy parmandel0_sasc.s asm/
+    delete parmandel0_sasc.s
+ENDIF
+; parmandel1
+IF EXISTS parmandel1_sasc 
+    copy parmandel1_sasc bin/
+    delete parmandel1_sasc
+ENDIF
+IF EXISTS parmandel1_sasc.s
+    copy parmandel1_sasc.s asm/
+    delete parmandel1_sasc.s
+ENDIF
+; parmandel2
+IF EXISTS parmandel2_sasc 
+    copy parmandel2_sasc bin/
+    delete parmandel2_sasc
+ENDIF
+IF EXISTS parmandel2_sasc.s 
+    copy parmandel2_sasc.s asm/
+    delete parmandel2_sasc.s
+ENDIF
+
+; gcc
+; parmandel0
+IF EXISTS parmandel0_gcc 
+    copy parmandel0_gcc bin/
+    delete parmandel0_gcc
+ENDIF
+IF EXISTS parmandel0_gcc.s 
+    copy parmandel0_gcc.s asm/
+    delete parmandel0_gcc.s
+ENDIF
+;simple saga1
+IF EXISTS parmandel1_gcc 
+    copy parmandel1_gcc bin/
+    delete parmandel1_gcc
+ENDIF
+IF EXISTS parmandel1_gcc.s 
+    copy parmandel1_gcc.s asm/
+    delete parmandel1_gcc.s
+ENDIF
+; parmandel2
+IF EXISTS parmandel2_gcc 
+    copy parmandel2_gcc bin/
+    delete parmandel2_gcc
+ENDIF
+IF EXISTS parmandel2_gcc.s 
+    copy parmandel2_gcc.s asm/
+    delete parmandel2_gcc.s
+ENDIF
+
+; vbcc
+; parmandel0
+IF EXISTS parmandel0_vbcc 
+    copy parmandel0_vbcc bin/
+    delete parmandel0_vbcc
+ENDIF
+IF EXISTS parmandel0_vbcc.s
+    copy parmandel0_vbcc.s asm/
+    delete parmandel0_vbcc.s
+ENDIF
+; parmandel1
+IF EXISTS parmandel1_vbcc 
+    copy parmandel1_vbcc bin/
+    delete parmandel1_vbcc
+ENDIF
+IF EXISTS parmandel1_vbcc.s 
+    copy parmandel1_vbcc.s asm/
+    delete parmandel1_vbcc.s
+ENDIF
+; parmandel0
+IF EXISTS parmandel2_vbcc 
+    copy parmandel2_vbcc bin/
+    delete parmandel2_vbcc
+ENDIF
+IF EXISTS parmandel2_vbcc.s
+    copy parmandel2_vbcc.s asm/
+    delete parmandel2_vbcc.s
+ENDIF
+
+; gcc
+; parmandel0
+IF EXISTS parmandel0_gcc6 
+    copy parmandel0_gcc6 bin/
+    delete parmandel0_gcc6
+ENDIF
+IF EXISTS parmandel0_gcc6.s 
+    copy parmandel0_gcc6.s asm/
+    delete parmandel0_gcc6.s
+ENDIF
+;simple saga1
+IF EXISTS parmandel1_gcc6 
+    copy parmandel1_gcc6 bin/
+    delete parmandel1_gcc6
+ENDIF
+IF EXISTS parmandel1_gcc6.s 
+    copy parmandel1_gcc6.s asm/
+    delete parmandel1_gcc6.s
+ENDIF
+; parmandel2
+IF EXISTS parmandel2_gcc6 
+    copy parmandel2_gcc6 bin/
+    delete parmandel2_gcc6
+ENDIF
+IF EXISTS parmandel2_gcc6.s 
+    copy parmandel2_gcc6.s asm/
+    delete parmandel2_gcc6.s
+ENDIF
+
+; copy also handwritten asm files
+copy fractal_asm0.s asm/
+copy fractal_asm1.s asm/
+copy fractal_asm2.s asm/
+

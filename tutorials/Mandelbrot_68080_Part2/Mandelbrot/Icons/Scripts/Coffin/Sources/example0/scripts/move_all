@@ -1,0 +1,84 @@
+cd /
+
+; move asm and exe to subdrawers
+
+; sasc
+; simple_saga0
+IF EXISTS simple_saga0_sasc 
+    copy simple_saga0_sasc bin/
+    delete simple_saga0_sasc
+ENDIF
+IF EXISTS simple_saga0_sasc.s 
+    copy simple_saga0_sasc.s asm/
+    delete simple_saga0_sasc.s
+ENDIF
+; simple_saga1
+IF EXISTS simple_saga1_sasc 
+    copy simple_saga1_sasc bin/
+    delete simple_saga1_sasc
+ENDIF
+IF EXISTS simple_saga1_sasc.s
+    copy simple_saga1_sasc.s asm/
+    delete simple_saga1_sasc.s
+ENDIF
+
+; gcc
+; simple_saga0
+IF EXISTS simple_saga0_gcc 
+    copy simple_saga0_gcc bin/
+    delete simple_saga0_gcc
+ENDIF
+IF EXISTS simple_saga0_gcc.s 
+    copy simple_saga0_gcc.s asm/
+    delete simple_saga0_gcc.s
+ENDIF
+;simple saga1
+IF EXISTS simple_saga1_gcc 
+    copy simple_saga1_gcc bin/
+    delete simple_saga1_gcc
+ENDIF
+IF EXISTS simple_saga1_gcc.s 
+    copy simple_saga1_gcc.s asm/
+    delete simple_saga1_gcc.s
+ENDIF
+
+; vbcc
+; simple_saga0
+IF EXISTS simple_saga0_vbcc 
+    copy simple_saga0_vbcc bin/
+    delete simple_saga0_vbcc
+ENDIF
+IF EXISTS simple_saga0_vbcc.s
+    copy simple_saga0_vbcc.s asm/
+    delete simple_saga0_vbcc.s
+ENDIF
+
+; simple_saga1
+IF EXISTS simple_saga1_vbcc 
+    copy simple_saga1_vbcc bin/
+    delete simple_saga1_vbcc
+ENDIF
+IF EXISTS simple_saga1_vbcc.s 
+    copy simple_saga1_vbcc.s asm/
+    delete simple_saga1_vbcc.s
+ENDIF
+
+; gcc6
+; simple_saga0
+IF EXISTS simple_saga0_gcc6 
+    copy simple_saga0_gcc6 bin/
+    delete simple_saga0_gcc6
+ENDIF
+IF EXISTS simple_saga0_gcc6.s 
+    copy simple_saga0_gcc6.s asm/
+    delete simple_saga0_gcc6.s
+ENDIF
+;simple saga1
+IF EXISTS simple_saga1_gcc6 
+    copy simple_saga1_gcc6 bin/
+    delete simple_saga1_gcc6
+ENDIF
+IF EXISTS simple_saga1_gcc6.s 
+    copy simple_saga1_gcc6.s asm/
+    delete simple_saga1_gcc6.s
+ENDIF

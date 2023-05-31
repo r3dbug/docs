@@ -1,0 +1,52 @@
+
+all:
+	smake brute0
+	smake brute1
+	smake brute2
+	smake brute3
+
+allclean:
+	smake cleanexe
+	smake all
+	smake clean
+		
+brute0:
+	vasm -m68080 -Fhunk fractal_asm0.s -o fractal_asm0.o
+	sc link cpu=68040 math=68881 brute_force0.c fractal_asm0.o
+
+brute1:
+	vasm -m68080 -Fhunk fractal_asm1.s -o fractal_asm1.o
+	sc link cpu=68040 math=68881 brute_force1.c fractal_asm1.o
+
+brute2:
+	vasm -m68080 -Fhunk fractal_asm2.s -o fractal_asm2.o
+	sc link cpu=68040 math=68881 brute_force2.c fractal_asm2.o
+
+brute3:
+	vasm -m68080 -Fhunk fractal_asm3.s -o fractal_asm3.o
+	sc link cpu=68040 math=68881 brute_force3.c fractal_asm3.o
+
+clean:
+	delete brute_force0.o
+	delete brute_force0.lnk
+	delete brute_force0.info
+	delete fractal_asm0.o
+	delete brute_force1.o
+	delete brute_force1.lnk
+	delete brute_force1.info
+	delete fractal_asm1.o
+	delete brute_force2.o
+	delete brute_force2.lnk
+	delete brute_force2.info
+	delete fractal_asm2.o
+	delete brute_force3.o
+	delete brute_force3.lnk
+	delete brute_force3.info
+	delete fractal_asm3.o
+
+cleanexe:
+	delete brute_force0
+	delete brute_force1
+	delete brute_force2
+	delete brute_force3
+	

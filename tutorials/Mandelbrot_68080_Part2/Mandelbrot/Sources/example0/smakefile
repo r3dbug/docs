@@ -1,0 +1,45 @@
+
+all:
+	smake simple0
+	smake simple1
+	
+allclean:
+	smake cleanexe
+	smake all
+	smake clean
+
+alloptstrip:
+	smake simple0optstrip
+	smake simple1optstrip
+	
+simple1optstrip:
+	sc link optimize opttime optalias optinline stripdebug simple_saga1.c disassemble=simple_saga1_sasc.s
+	copy simple_saga1 simple_saga1_sasc
+	delete simple_saga1
+	
+simple0optstrip:
+	sc link optimize opttime optalias optinline stripdebug simple_saga0.c disassemble=simple_saga0_sasc.s
+	copy simple_saga0 simple_saga0_sasc
+	delete simple_saga0
+	
+simple1:
+	sc link simple_saga1.c disassemble=simple_saga1_sasc.s
+	copy simple_saga1 simple_saga1_sasc
+	delete simple_saga1
+	
+simple0:
+	sc link simple_saga0.c disassemble=simple_saga0_sasc.s
+	copy simple_saga0 simple_saga0_sasc
+	delete simple_saga0
+	
+clean:
+	delete simple_saga0.o
+	delete simple_saga0.lnk
+	delete simple_saga0.info
+	delete simple_saga1.o
+	delete simple_saga1.lnk
+	delete simple_saga1.info
+	
+cleanexe:
+	delete simple_saga0_sasc
+	delete simple_saga1_sasc

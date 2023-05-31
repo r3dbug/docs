@@ -1,0 +1,90 @@
+
+all:
+	smake brute0
+	smake brute1
+	smake brute2
+	smake brute3
+
+allclean:
+	smake cleanexe
+	smake all
+	smake clean
+
+alloptstrip:
+	smake brute0optstrip
+	smake brute1optstrip
+	smake brute2optstrip
+	smake brute3optstrip
+		
+brute0optstrip:
+	vasm -m68080 -Fhunk fractal_asm0.s -o fractal_asm0.o
+	sc link optimize opttime optalias optinline stripdebug cpu=68040 math=68881 disassemble=brute_force0_sasc.s brute_force0.c fractal_asm0.o
+	copy brute_force0 brute_force0_sasc
+	delete brute_force0
+	
+brute1optstrip:
+	vasm -m68080 -Fhunk fractal_asm1.s -o fractal_asm1.o
+	sc link optimize opttime optalias optinline stripdebug cpu=68040 math=68881 disassemble=brute_force1_sasc.s brute_force1.c fractal_asm1.o
+	copy brute_force1 brute_force1_sasc
+	delete brute_force1
+	
+brute2optstrip:
+	vasm -m68080 -Fhunk fractal_asm2.s -o fractal_asm2.o
+	sc link optimize opttime optalias optinline stripdebug cpu=68040 math=68881 disassemble=brute_force2_sasc.s brute_force2.c fractal_asm2.o
+	copy brute_force2 brute_force2_sasc
+	delete brute_force2
+	
+brute3optstrip:
+	vasm -m68080 -Fhunk fractal_asm3.s -o fractal_asm3.o
+	sc link optimize opttime optalias optinline stripdebug cpu=68040 math=68881 disassemble=brute_force3_sasc.s brute_force3.c fractal_asm3.o
+	copy brute_force3 brute_force3_sasc
+	delete brute_force3
+		
+brute0:
+	vasm -m68080 -Fhunk fractal_asm0.s -o fractal_asm0.o
+	sc link cpu=68040 math=68881 disassemble=brute_force0_sasc.s brute_force0.c fractal_asm0.o
+	copy brute_force0 brute_force0_sasc
+	delete brute_force0
+	
+brute1:
+	vasm -m68080 -Fhunk fractal_asm1.s -o fractal_asm1.o
+	sc link cpu=68040 math=68881 disassemble=brute_force1_sasc.s brute_force1.c fractal_asm1.o
+	copy brute_force1 brute_force0_sasc
+	delete brute_force1
+	
+brute2:
+	vasm -m68080 -Fhunk fractal_asm2.s -o fractal_asm2.o
+	sc link cpu=68040 math=68881 disassemble=brute_force2_sasc.s brute_force2.c fractal_asm2.o
+	copy brute_force2 brute_force0_sasc
+	delete brute_force2
+	
+brute3:
+	vasm -m68080 -Fhunk fractal_asm3.s -o fractal_asm3.o
+	sc link cpu=68040 math=68881 disassemble=brute_force3_sasc.s brute_force3.c fractal_asm3.o
+	copy brute_force3 brute_force0_sasc
+	delete brute_force3
+	
+clean:
+	delete brute_force0.o
+	delete brute_force0.lnk
+	delete brute_force0.info
+	delete fractal_asm0.o
+	delete brute_force1.o
+	delete brute_force1.lnk
+	delete brute_force1.info
+	delete fractal_asm1.o
+	delete brute_force2.o
+	delete brute_force2.lnk
+	delete brute_force2.info
+	delete fractal_asm2.o
+	delete brute_force3.o
+	delete brute_force3.lnk
+	delete brute_force3.info
+	delete fractal_asm3.o
+
+cleanexe:
+	delete brute_force0
+	delete brute_force1
+	delete brute_force2
+	delete brute_force3
+	

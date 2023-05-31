@@ -1,0 +1,4 @@
+vc saga_time_vbcc_opt1.s saga_asm.o -o saga_time_vbcc_opt1
+vc saga_time_vbcc_opt2.s saga_asm.o -o saga_time_vbcc_opt2
+vc saga_time_vbcc_opt3.s saga_asm.o -o saga_time_vbcc_opt3
+vc saga_time_vbcc_opt4.s saga_asm.o -o saga_time_vbcc_opt4

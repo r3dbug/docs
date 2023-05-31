@@ -1,0 +1,3 @@
+
+# recompile
+/opt/amiga/bin/m68k-amigaos-gcc -s -noixemul -O3 -fomit-frame-pointer -m68881 -m68040 boundary_trace2_gcc6_opt1.s fractal_asm2.o -o boundary_trace2_gcc6_opt1

@@ -1,0 +1,31 @@
+cd /
+
+set gccflags0 "-m68040 -m68881 -S -fomit-frame-pointer -O3"
+set gccflags1 "-c -m68040 -m68881"
+set gccflags2 "-s"
+
+echo "Compiling with GCC ..."
+echo "Options:"
+echo "Flags0: $gccflags0"
+echo "Flags1: $gccflags1"
+echo "Flags2: $gccflags2"
+
+; saga_main0
+vbcc:bin/vasmm68k_mot -m68080 -noesc -Fhunk saga_asm0.s -o saga_asm0.o
+gcc $gccflags0 saga_main0.c -o saga_main0_gcc.s
+gcc $gccflags1 saga_main0_gcc.s -o saga_main0.o
+gcc $gccflags2 saga_main0.o saga_asm0.o -o saga_main0_gcc
+
+; saga_main1
+vbcc:bin/vasmm68k_mot -m68080 -noesc -Fhunk saga_asm1.s -o saga_asm1.o
+gcc $gccflags0 saga_main1.c -o saga_main1_gcc.s
+gcc $gccflags1 saga_main1_gcc.s -o saga_main1.o
+gcc $gccflags2 saga_main1.o saga_asm1.o -o saga_main1_gcc
+
+; clean
+delete saga_main0.o
+delete saga_main1.o
+delete saga_main0.lnk
+delete saga_main1.lnk
+
+echo "End of compile script."

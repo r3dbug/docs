@@ -1,0 +1,19 @@
+cd /
+
+set gccflags1 "-S -fomit-frame-pointer -O3"
+set gccflags2 "-s"
+
+echo "Compiling with GCC ..."
+echo "Options:"
+echo "Flags1: $gccflags1"
+echo "Flags2: $gccflags2"
+
+; simple_saga0
+gcc $gccflags1 simple_saga0.c -o simple_saga0_gcc.s
+gcc $gccflags2 simple_saga0_gcc.s -o simple_saga0_gcc
+
+; simple_saga1
+gcc $gccflags1 simple_saga1.c -o simple_saga1_gcc.s
+gcc $gccflags2 simple_saga1_gcc.s -o simple_saga1_gcc
+
+echo "End of compile script."

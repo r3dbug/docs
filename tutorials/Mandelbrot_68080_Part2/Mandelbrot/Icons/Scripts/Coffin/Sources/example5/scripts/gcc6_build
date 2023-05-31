@@ -1,0 +1,30 @@
+cd ..
+
+gccflags0="-noixemul -m68040 -m68881 -S -fomit-frame-pointer -O3 -Os"
+gccflags1="-noixemul -c -m68040 -m68881"
+gccflags2="-s -noixemul"
+
+echo "Compiling with GCC ..."
+echo "Options:"
+echo "Flags0: $gccflags0"
+echo "Flags1: $gccflags1"
+echo "Flags2: $gccflags2"
+
+# boundary_trace0
+/opt/vbcc/bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk fractal_asm0.s -o fractal_asm0.o
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags0 -m68881 -m68040 boundary_trace0.c -o boundary_trace0_gcc6.s
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags1 boundary_trace0_gcc6.s -o boundary_trace0.o
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags2 boundary_trace0.o fractal_asm0.o -o boundary_trace0_gcc6
+
+# boundary_trace1
+/opt/vbcc/bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk fractal_asm1.s -o fractal_asm1.o
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags0 boundary_trace1.c -o boundary_trace1_gcc6.s
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags1 boundary_trace1_gcc6.s -o boundary_trace1.o
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags2 boundary_trace1.o fractal_asm1.o -o boundary_trace1_gcc6
+
+# boundary_trace2
+/opt/vbcc/bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk fractal_asm2.s -o fractal_asm2.o
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags0 boundary_trace2.c -o boundary_trace2_gcc6.s
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags1 boundary_trace2_gcc6.s -o boundary_trace2.o
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags2 boundary_trace2.o fractal_asm2.o -o boundary_trace2_gcc6
+

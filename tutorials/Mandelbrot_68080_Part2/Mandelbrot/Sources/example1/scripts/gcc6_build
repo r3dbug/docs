@@ -1,0 +1,24 @@
+cd ..
+
+gccflags0="-noixemul -m68040 -m68881 -S -fomit-frame-pointer -O3 -Os"
+gccflags1="-noixemul -c -m68040 -m68881"
+gccflags2="-s -noixemul"
+
+echo "Compiling with GCC ..."
+echo "Options:"
+echo "Flags0: $gccflags0"
+echo "Flags1: $gccflags1"
+echo "Flags2: $gccflags2"
+
+# boundary_trace0
+# saga_main0
+/opt/vbcc/bin/vasmm68k_mot -m68080 -noesc -Fhunk saga_asm0.s -o saga_asm0.o
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags0 saga_main0.c -o saga_main0_gcc6.s
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags1 saga_main0_gcc6.s -o saga_main0.o
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags2 saga_main0.o saga_asm0.o -o saga_main0_gcc6
+
+# saga_main1
+/opt/vbcc/bin/vasmm68k_mot -m68080 -noesc -Fhunk saga_asm1.s -o saga_asm1.o
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags0 saga_main1.c -o saga_main1_gcc6.s
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags1 saga_main1_gcc6.s -o saga_main1.o
+/opt/amiga/bin/m68k-amigaos-gcc $gccflags2 saga_main1.o saga_asm1.o -o saga_main1_gcc6

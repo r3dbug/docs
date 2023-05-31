@@ -1,0 +1,72 @@
+
+all:
+	smake boundary0
+	smake boundary1
+	smake boundary2
+
+allclean:
+	smake cleanexe
+	smake all
+	smake clean
+
+alloptstrip:
+
+	smake b0optstrip
+	smake b1optstrip
+	smake b2optstrip
+
+b0optstrip:
+	vasm -m68080 -Fhunk fractal_asm0.s -o fractal_asm0.o
+	sc link optimize opttime optalias optinline stripdebug cpu=68040 math=68881 disassemble=boundary_trace0_sasc.s boundary_trace0.c fractal_asm0.o
+	copy boundary_trace0 boundary_trace0_sasc
+	delete boundary_trace0
+	
+b1optstrip:
+	vasm -m68080 -Fhunk fractal_asm1.s -o fractal_asm1.o
+	sc link optimize opttime optalias optinline stripdebug cpu=68040 math=68881 disassemble=boundary_trace1_sasc.s boundary_trace1.c fractal_asm1.o
+	copy boundary_trace1 boundary_trace1_sasc
+	delete boundary_trace1
+	
+b2optstrip:
+	vasm -m68080 -Fhunk -opt-speed fractal_asm2.s -o fractal_asm2.o
+	sc link optimize opttime optalias optinline stripdebug cpu=68040 math=68881 disassemble=boundary_trace2_sasc.s boundary_trace2.c fractal_asm2.o
+	copy boundary_trace2 boundary_trace2_sasc
+	delete boundary_trace2
+		
+boundary0:
+	vasm -m68080 -Fhunk fractal_asm0.s -o fractal_asm0.o
+	sc link cpu=68040 math=68881 disassemble=boundary_trace0_sasc.s boundary_trace0.c fractal_asm0.o
+	copy boundary_trace0 boundary_trace0_sasc
+	delete boundary_trace0
+	
+boundary1:
+	vasm -m68080 -Fhunk fractal_asm1.s -o fractal_asm1.o
+	sc link cpu=68040 math=68881 disassemble=boundary_trace1_sasc.s boundary_trace1.c fractal_asm1.o
+	copy boundary_trace1 boundary_trace1_sasc
+	delete boundary_trace1
+	
+boundary2:
+	vasm -m68080 -Fhunk -opt-speed fractal_asm2.s -o fractal_asm2.o
+	sc link optimize opttime cpu=68040 math=68881 disassemble=boundary_trace2_sasc.s boundary_trace2.c fractal_asm2.o
+	copy boundary_trace2 boundary_trace2_sasc
+	delete boundary_trace2
+	
+clean:
+	delete boundary_trace0.o
+	delete boundary_trace0.lnk
+	delete boundary_trace0.info
+	delete fractal_asm0.o
+	delete boundary_trace1.o
+	delete boundary_trace1.lnk
+	delete boundary_trace1.info
+	delete fractal_asm1.o
+	delete boundary_trace2.o
+	delete boundary_trace2.lnk
+	delete boundary_trace2.info
+	delete fractal_asm2.o
+	
+cleanexe:
+	delete boundary_trace0
+	delete boundary_trace1
+	delete boundary_trace2
+	

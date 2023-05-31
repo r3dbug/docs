@@ -1,0 +1,3 @@
+; copies ApolloOS icons
+
+copy ApolloOS/#? //  ALL

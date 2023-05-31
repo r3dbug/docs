@@ -1,0 +1,23 @@
+cd /
+
+set gccflags0 "-m68040 -m68881 -S -fomit-frame-pointer -O3"
+set gccflags1 "-c -m68040 -m68881"
+set gccflags2 "-s"
+
+echo "Compiling with GCC ..."
+echo "Options:"
+echo "Flags1: $gccflags0"
+echo "Flags1: $gccflags1"
+echo "Flags2: $gccflags2"
+
+; saga_time
+vbcc:bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk saga_asm.s -o saga_asm.o
+gcc $gccflags0 saga_time.c -o saga_time_gcc.s
+gcc $gccflags1 saga_time_gcc.s -o saga_time.o
+gcc $gccflags2 saga_time.o saga_asm.o -o saga_time_gcc
+
+; clean
+delete saga_time.o
+delete saga_time.lnk
+
+echo "End of compile script."

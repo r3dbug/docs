@@ -1,0 +1,47 @@
+cd /
+
+set gccflags0 "-m68040 -m68881 -S -fomit-frame-pointer -O3"
+set gccflags1 "-c -m68040 -m68881"
+set gccflags2 "-s -lm -lc"
+
+echo "Compiling with GCC ..."
+echo "Options:"
+echo "Flags0: $gccflags0"
+echo "Flags1: $gccflags1"
+echo "Flags2: $gccflags2"
+
+; brute_force0
+vbcc:bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk fractal_asm0.s -o fractal_asm0.o
+gcc $gccflags0 brute_force0.c -o brute_force0_gcc.s
+gcc $gccflags1 brute_force0_gcc.s -o brute_force0.o
+gcc $gccflags2 brute_force0.o fractal_asm0.o -o brute_force0_gcc
+
+; brute_force1
+;vbcc:bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk fractal_asm1.s -o fractal_asm1.o
+;gcc $gccflags0 brute_force1.c -o brute_force1_gcc.s
+;gcc $gccflags1 brute_force1_gcc.s -o brute_force1.o
+;gcc $gccflags2 brute_force1.o fractal_asm0.o -o brute_force1_gcc
+
+; brute_force2
+;vbcc:bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk fractal_asm2.s -o fractal_asm2.o
+;gcc $gccflags0 brute_force2.c -o brute_force2_gcc.s
+;gcc $gccflags1 brute_force2_gcc.s -o brute_force2.o
+;gcc $gccflags2 brute_force2.o fractal_asm0.o -o brute_force2_gcc
+
+; brute_force3
+;vbcc:bin/vasmm68k_mot -m68080 -m68881 -noesc -Fhunk fractal_asm3.s -o fractal_asm3.o
+;gcc $gccflags0 brute_force3.c -o brute_force3_gcc.s
+;gcc $gccflags1 brute_force3_gcc.s -o brute_force3.o
+;gcc $gccflags2 brute_force3.o fractal_asm0.o -o brute_force3_gcc
+
+; clean
+delete brute_force0.o
+delete brute_force0.lnk
+delete brute_force1.o
+delete brute_force1.lnk
+delete brute_force2.o
+delete brute_force2.lnk
+delete brute_force3.o
+delete brute_force3.lnk
+
+echo "End of compile script."
